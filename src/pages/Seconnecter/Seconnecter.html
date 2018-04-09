@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+       Sign in 
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content >
+   
+   
+
+  <ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input [(ngModel)]="username" type="text"> </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input [(ngModel)]="password" type="password"></ion-input>
+  </ion-item>
+
+
+    
+    <div padding>
+     
+      <button id="sign"ion-button block (tap)="recupinfo()">Sign In</button>
+    </div>
+
+</ion-content>
+
+
+    
+
+
+    
+  
+  

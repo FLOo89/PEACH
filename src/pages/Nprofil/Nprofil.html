@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+       Nouveau profil
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content >
+   
+    <ion-item>
+      <ion-label floating>Nom</ion-label>
+      <ion-input [(ngModel)]="Nom" type="string"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating >Prénom</ion-label>
+      <ion-input [(ngModel)]="Prenom" type="string"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>Age</ion-label>
+      <ion-input [(ngModel)]="Age" type="number"></ion-input>
+    </ion-item>
+  
+    <ion-item >
+      <ion-label floating>Adresse-mail</ion-label>
+      <ion-input [(ngModel)]="Adresse_mail" type="string"></ion-input>
+    </ion-item>
+
+  <div padding>
+    <button id="creerprofil"  ion-button block (tap)="send_to_database()" >Creer le profil</button>
+  </div>
+  
+  </ion-content> 
