@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NprofilPage } from '../Nprofil/Nprofil';
 import { SeconnecterPage } from '../Seconnecter/Seconnecter';
+import { sqlitepage } from '../sqlite/sqlite'
 
 
 @Component({
@@ -16,7 +17,7 @@ export class HomePage {
 
   private createNprofil (){
     
-    this.navCtrl.push(NprofilPage); 
+    this.navCtrl.push(sqlitepage); 
   }
 
   private Signin ()

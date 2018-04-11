@@ -17,7 +17,10 @@ export class sqlitepage {
   Age :number;
   Adresse_mail: string;
 
-   private db:SQLiteObject
+   private db:SQLiteObject;
+
+   Name: string [] = [];
+
 
   constructor(public navCtrl: NavController, private sqlite: SQLite, public navParams: NavParams) {
     
@@ -28,7 +31,7 @@ export class sqlitepage {
     this.Age=navParams.get("Age");
     this.Adresse_mail=navParams.get("Adresse_mail"); 
 
-    this.save_myprofil(); 
+   //this.save_myprofil(); 
     
     
   
@@ -41,7 +44,7 @@ export class sqlitepage {
     location: 'default'
   })
     .then((db: SQLiteObject) => {
-       console.log('database creée');
+       console.log('database crée');
        this.db=db;
        this.createtable(); 
       })
@@ -51,9 +54,10 @@ export class sqlitepage {
   }
   
   private createtable() : void {
-    this.db.executeSql(' CREATE TABLE IF NOT EXISTS `Profils` ( `idProfil` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, `Nom` TEXT NOT NULL, `Prenom` TEXT NOT NULL, `username` TEXT NOT NULL UNIQUE, `password` TEXT NOT NULL, `Age` INTEGER NOT NULL, `Adresse_mail` TEXT NOT NULL UNIQUE' ,{})
+    this.db.executeSql(' CREATE TABLE IF NOT EXISTS Profils ( idProfil INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, Nom TEXT NOT NULL, Prenom TEXT NOT NULL, username TEXT NOT NULL UNIQUE, password TEXT NOT NULL, Age INTEGER NOT NULL, Adresse_mail TEXT NOT NULL UNIQUE' ,{})
         .then(() =>{ 
-          console.log('table profil crée');})
+          console.log('table profil crée');
+          })
         
         .catch(e => console.log(e));
   }
@@ -67,12 +71,40 @@ export class sqlitepage {
     console.log('l age ->' + this.Age);
     console.log('l adresse mail -> '+ this.Adresse_mail);
 
-    this.db.executeSql('INSERT INTO `Profils` (Nom,Prenom,username,password,Age,Adresse_mail) VALUES (\'' +this.Nom + '\' , \'' + this.Prenom +'\', \'' +'username' + '\', \'' + 'password'+ '\', ' + this.Age + ', \'' + this.Adresse_mail+ '\')',{})
+    this.db.executeSql('INSERT INTO `Profils` (Nom, Prenom, username, password, Age, Adresse_mail) VALUES (\'' +this.Nom + '\' , \'' + this.Prenom +'\', \'' +'username' + '\', \'' + 'password'+ '\', ' + this.Age + ', \'' + this.Adresse_mail+ '\')',{})
     
-    .then(() =>{ 
-      console.log('profil inserted');})
+    .then(() => {console.log('profil inserted');})
     
     .catch(e => console.log(e));
+  }
+
+
+
+  public rerieveName ()
+  {
+    this.Name = []; 
+    this.db.executeSql('SELECT Nom FROM `Profils`', {})
+    .then((data) => {
+
+      if(data==null)
+      {
+        return; 
+
+      }
+
+      if(data.rows)
+      {
+        if(data.rows.lenght>0)
+        {
+          for(var i = 0 ; i<data.rows.lenght; i++){
+            this.Name.push(data.rows.item(i).Nom);
+          }
+        }   
+
+
+      }
+    });
+
   }
 
 

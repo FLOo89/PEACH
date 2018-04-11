@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NprofilPage } from '../Nprofil/Nprofil';
+import { ScannerPage } from '../Scanner/Scanner';
 
 @Component({
   selector: 'page-Seconnecter',
@@ -20,7 +21,7 @@ export class SeconnecterPage {
 
     if(this.username && this.password)
     {
-      this.navCtrl.push(NprofilPage, {
+      this.navCtrl.push(ScannerPage, {
       username: this.username,
      password: this.password}, );
 

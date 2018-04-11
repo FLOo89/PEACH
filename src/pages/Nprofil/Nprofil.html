@@ -10,12 +10,12 @@
    
     <ion-item>
       <ion-label floating>Nom</ion-label>
-      <ion-input [(ngModel)]="Nom" type="string"></ion-input>
+      <ion-input [(ngModel)]="Nom" type="text"></ion-input>
     </ion-item>
   
     <ion-item>
       <ion-label floating >Prénom</ion-label>
-      <ion-input [(ngModel)]="Prenom" type="string"></ion-input>
+      <ion-input [(ngModel)]="Prenom" type="text"></ion-input>
     </ion-item>
   
     <ion-item>
@@ -25,11 +25,22 @@
   
     <ion-item >
       <ion-label floating>Adresse-mail</ion-label>
-      <ion-input [(ngModel)]="Adresse_mail" type="string"></ion-input>
+      <ion-input [(ngModel)]="Adresse_mail" type="text"></ion-input>
     </ion-item>
+
+<p> Nom:  </p>
+     <p>Prenom:</p>
+     <p> Age: </p>
+     <p> Adresse_mail:</p>
+
 
   <div padding>
     <button id="creerprofil"  ion-button block (tap)="send_to_database()" >Creer le profil</button>
   </div>
   
+  
+     
+ 
+
+
   </ion-content> 

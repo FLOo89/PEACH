@@ -6,12 +6,6 @@ import { sqlitepage} from '../sqlite/sqlite';
   selector: 'page-Nprofil',
   templateUrl: 'Nprofil.html'
 })
-
-
-
-
-
-
 export class NprofilPage {
 
 
@@ -21,7 +15,7 @@ export class NprofilPage {
   Adresse_mail: string;  
 
   constructor(public navCtrl: NavController) {
-   
+
   }
 
 
