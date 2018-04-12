@@ -3,31 +3,40 @@ import { NavController } from 'ionic-angular';
 import { NprofilPage } from '../Nprofil/Nprofil';
 import { ScannerPage } from '../Scanner/Scanner';
 
+
+import {PeachApiService} from '../../services/peachApi.service';
+
+
 @Component({
   selector: 'page-Seconnecter',
   templateUrl: 'Seconnecter.html'
 })
 export class SeconnecterPage {
 
-  constructor(public navCtrl: NavController) {
+  netResponse: any;
+  constructor(public PeachApiService : PeachApiService ) {
   }
 
-  username : string;
-  password :string; 
+
+callPostLogin(email,password) {
+
+  let p = this.PeachApiService.postLogin(email,password);
+
+
+  p.then(data => {
+
+    console.log(JSON.stringify(data));
+    this.netResponse = JSON.stringify(data.json().args);
+  })
+}
+
+
+  
 
   private recupinfo()
   {
     
-
-    if(this.username && this.password)
-    {
-      this.navCtrl.push(ScannerPage, {
-      username: this.username,
-     password: this.password}, );
-
-    }
-    
-    } 
+     
   }
 
-
+}

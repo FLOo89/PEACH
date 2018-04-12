@@ -1,56 +1,56 @@
 <ion-header>
-    <ion-navbar>
-      <ion-title>
-       Nouveau profil
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content >
-   
-    <ion-item>
-      <ion-label floating>Nom</ion-label>
-      <ion-input [(ngModel)]="Nom" type="text"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label floating >Prénom</ion-label>
-      <ion-input [(ngModel)]="Prenom" type="text"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label floating>Age</ion-label>
-      <ion-input [(ngModel)]="Age" type="number"></ion-input>
-    </ion-item>
-  
-    <ion-item >
-      <ion-label floating>Adresse-mail</ion-label>
-      <ion-input [(ngModel)]="Adresse_mail" type="text"></ion-input>
-    </ion-item>
-      
-    
-   
-    
-      <ion-list >
-        <ion-item id="allergies-list">
-          <ion-label >Allergies</ion-label>
-          <ion-select [(ngModel)]="Allergies" multiple="true">
-            <ion-option value="Oeuf">Oeuf</ion-option>
-            <ion-option value="lait">Lait</ion-option>
-            <ion-option value="Noix">Noix</ion-option>
-            <ion-option value="Gluten">Gluten</ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
-   
+  <ion-navbar>
+    <ion-title>
+      Nouveau profil
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label floating>Nom</ion-label>
+    <ion-input [(ngModel)]="Nom" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Prénom</ion-label>
+    <ion-input [(ngModel)]="Prenom" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Age</ion-label>
+    <ion-input [(ngModel)]="Age" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Adresse-mail</ion-label>
+    <ion-input [(ngModel)]="Adresse_mail" type="text"></ion-input>
+  </ion-item>
 
 
- 
-    <button id="cr" ion-button block (tap)="send_to_database()" >Creer le profil</button>
- 
-  
-     
- 
 
 
-  </ion-content> 
+  <ion-list>
+    <ion-item id="allergies-list">
+      <ion-label>Allergies</ion-label>
+      <ion-select [(ngModel)]="Allergies" multiple="true">
+        <ion-option value="Oeuf">Oeuf</ion-option>
+        <ion-option value="lait">Lait</ion-option>
+        <ion-option value="Noix">Noix</ion-option>
+        <ion-option value="Gluten">Gluten</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+
+
+
+  <button id="cr" ion-button block (tap)="callPostregister(Adresse_mail,Nom,Prenom)">Creer le profil</button>
+
+
+
+
+
+
+</ion-content>

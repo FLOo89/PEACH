@@ -11,9 +11,10 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { NprofilPage } from '../pages/Nprofil/Nprofil';
 import { SeconnecterPage } from '../pages/Seconnecter/Seconnecter';
-import { sqlitepage } from '../pages/sqlite/sqlite';
 import { ScannerPage} from '../pages/Scanner/Scanner'
-
+ 
+import { PeachApiService } from '../services/peachApi.service';
+import { HttpModule } from '@angular/http';
 
 
 
@@ -23,15 +24,15 @@ import { ScannerPage} from '../pages/Scanner/Scanner'
     HomePage,
     NprofilPage,
     SeconnecterPage,
-    sqlitepage,
-    ScannerPage,
+    ScannerPage
 
    
 
   ],
   imports: [
+    HttpModule,
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp)
  
   ],
   bootstrap: [IonicApp],
@@ -40,8 +41,7 @@ import { ScannerPage} from '../pages/Scanner/Scanner'
     HomePage,
     NprofilPage,
     SeconnecterPage,
-    sqlitepage,
-    ScannerPage,
+    ScannerPage
     
 
     
@@ -50,7 +50,8 @@ import { ScannerPage} from '../pages/Scanner/Scanner'
     StatusBar,
     SplashScreen,
     SQLite,
-    BarcodeScanner
+    BarcodeScanner,
+    PeachApiService
    
    
   ]

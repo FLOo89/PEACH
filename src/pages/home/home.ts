@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, IonicPage,NavParams} from 'ionic-angular';
 import { NprofilPage } from '../Nprofil/Nprofil';
 import { SeconnecterPage } from '../Seconnecter/Seconnecter';
-import { sqlitepage } from '../sqlite/sqlite';
 
 
 
