@@ -1,0 +1,39 @@
+
+  <ion-header>
+        <ion-toolbar>
+          <ion-buttons end>
+            <button ion-button icon-only color="royal">
+              <ion-icon name="search"></ion-icon>
+            </button>
+          </ion-buttons>
+
+          <ion-buttons start>
+              <button ion-button menuToggle >
+               <ion-icon name="menu" > </ion-icon>
+              </button>
+          </ion-buttons>
+    </ion-toolbar>
+    </ion-header>
+  
+
+
+
+
+<ion-content>
+
+    <div>
+        
+     <button id="scannerButton" ion-button icon-only (click)="scan()">
+        <ion-icon id="icon" name="barcode"></ion-icon>
+      </button>
+
+        <div *ngIf="scannedData.text">
+        <label> your bar code is :</label>
+    
+          <br> 
+         <span> {{scannedData.text}}</span>
+    
+        </div>
+    </div>
+
+</ion-content>
