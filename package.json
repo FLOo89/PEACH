@@ -63,5 +63,9 @@
       "android",
       "browser"
     ]
-  }
+  },
+  "platforms": [
+    "android",
+    "browser"
+  ]
 }

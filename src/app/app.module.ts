@@ -15,6 +15,8 @@ import { sqlitepage } from '../pages/sqlite/sqlite';
 import { ScannerPage} from '../pages/Scanner/Scanner'
 
 
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -22,12 +24,15 @@ import { ScannerPage} from '../pages/Scanner/Scanner'
     NprofilPage,
     SeconnecterPage,
     sqlitepage,
-    ScannerPage
+    ScannerPage,
+
+   
 
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+ 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -36,7 +41,10 @@ import { ScannerPage} from '../pages/Scanner/Scanner'
     NprofilPage,
     SeconnecterPage,
     sqlitepage,
-    ScannerPage
+    ScannerPage,
+    
+
+    
   ],
   providers: [
     StatusBar,
