@@ -30,8 +30,8 @@ export class NprofilPage {
   constructor(public navCtrl: NavController, public PeachApiService: PeachApiService) {
 
   }
-  callPostregister(email, password, username) {
-    let p = this.PeachApiService.postRegister(email, password, username);
+  callPostregister(email, password, username, age, allergie, bio) {
+    let p = this.PeachApiService.postRegister(email, password, username, age, allergie, bio);
     p.then(data => {
       console.log(JSON.stringify(data));
       this.netResponse = JSON.stringify(data.json().args);

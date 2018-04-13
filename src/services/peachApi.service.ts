@@ -25,10 +25,11 @@ export class PeachApiService {
         let request = this.http.post(url,param);
         return request.toPromise();
      }
-     postRegister(email,password,username): Promise<any> {
+     postRegister(email, password, username, age, allergie, bio): Promise<any> {
        
         let url = "http://localhost:8080/api/users/register";
-        let param = {email : email , password : password , username : username };
+        let param = { email : email , password : password , username : username , age : age , allergie : allergie , bio : bio };
+        console.log(param);
         let request = this.http.post(url,param);
         return request.toPromise();
      }

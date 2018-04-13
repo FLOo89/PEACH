@@ -9,13 +9,13 @@
 <ion-content>
 
   <ion-item>
-    <ion-label floating>Nom</ion-label>
-    <ion-input [(ngModel)]="Nom" type="text"></ion-input>
+    <ion-label floating>UserName</ion-label>
+    <ion-input [(ngModel)]="userName" type="text"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Prénom</ion-label>
-    <ion-input [(ngModel)]="Prenom" type="text"></ion-input>
+    <ion-label floating>Password</ion-label>
+    <ion-input [(ngModel)]="Password" type="password"></ion-input>
   </ion-item>
 
   <ion-item>
@@ -25,7 +25,12 @@
 
   <ion-item>
     <ion-label floating>Adresse-mail</ion-label>
-    <ion-input [(ngModel)]="Adresse_mail" type="text"></ion-input>
+    <ion-input [(ngModel)]="Adresse_mail" type="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Biographie</ion-label>
+    <ion-input [(ngModel)]="bio" type="text"></ion-input>
   </ion-item>
 
 
@@ -46,7 +51,7 @@
 
 
 
-  <button id="cr" ion-button block (tap)="callPostregister(Adresse_mail,Nom,Prenom)">Creer le profil</button>
+  <button id="cr" ion-button block (tap)="callPostregister(Adresse_mail, Password, userName, Age, Allergies, bio)">Creer le profil</button>
 
 
 
