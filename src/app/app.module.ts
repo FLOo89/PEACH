@@ -11,7 +11,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { NprofilPage } from '../pages/Nprofil/Nprofil';
 import { SeconnecterPage } from '../pages/Seconnecter/Seconnecter';
-import { ScannerPage} from '../pages/Scanner/Scanner'
+import { ScannerPage} from '../pages/Scanner/Scanner';
+import { ProfilPage} from '../pages/Profil/Profil'
  
 import { PeachApiService } from '../services/peachApi.service';
 import { HttpModule } from '@angular/http';
@@ -24,7 +25,8 @@ import { HttpModule } from '@angular/http';
     HomePage,
     NprofilPage,
     SeconnecterPage,
-    ScannerPage
+    ScannerPage,
+    ProfilPage
 
    
 
@@ -41,7 +43,8 @@ import { HttpModule } from '@angular/http';
     HomePage,
     NprofilPage,
     SeconnecterPage,
-    ScannerPage
+    ScannerPage,
+    ProfilPage
     
 
     

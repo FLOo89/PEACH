@@ -14,29 +14,24 @@ import {PeachApiService} from '../../services/peachApi.service';
 export class SeconnecterPage {
 
   netResponse: any;
-  constructor(public PeachApiService : PeachApiService ) {
+  constructor(public PeachApiService : PeachApiService, public navCtrl: NavController) {
   }
 
 
-callPostLogin(email,password) {
+callPostLogin(username,password) {
 
-  let p = this.PeachApiService.postLogin(email,password);
+  let p = this.PeachApiService.postLogin(username,password);
 
 
   p.then(data => {
-
     console.log(JSON.stringify(data));
-    this.netResponse = JSON.stringify(data.json().args);
+    this.navCtrl.push(ScannerPage);
   })
+  .catch(err => console.log(err))
 }
 
 
   
 
-  private recupinfo()
-  {
-    
-     
-  }
 
 }

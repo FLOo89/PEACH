@@ -8,6 +8,6 @@ export class PeachApiUser{
 }
 
 export class PeachApiLogin{
-    email: string;
+    username: string;
     password: string;
 }

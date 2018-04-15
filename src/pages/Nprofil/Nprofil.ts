@@ -31,10 +31,12 @@ export class NprofilPage {
 
   }
   callPostregister(email, password, username, age, allergie, bio) {
-    let p = this.PeachApiService.postRegister(email, password, username, age, allergie, bio);
+
+   var allergieSerialized = this.serialized(allergie);
+    let p = this.PeachApiService.postRegister(email, password, username, age, allergieSerialized, bio);
     p.then(data => {
       console.log(JSON.stringify(data));
-      this.netResponse = JSON.stringify(data.json().args);
+     
     })
   }
 
@@ -60,7 +62,19 @@ export class NprofilPage {
 
   }
 
-  private itemSelected(item) {
+  
+  private serialized(data : Array < string >)
+  {
+     var serial: string ="";
+     for (var i = 0; i < data.length; i++)
+     {
+       serial = serial + data[i] +"#";
+     }
+     console.log(serial);
+
+     return serial; 
+
+
 
   }
 
